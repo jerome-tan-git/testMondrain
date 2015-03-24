@@ -1,0 +1,20 @@
+<Schema name="jeromedw">
+  <Cube name="salsecube" visible="true" cache="true" enabled="true">
+    <Table name="testtable">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="nameh">
+      <Hierarchy name="namel" visible="true" hasAll="true">
+        <Level name="namestr" visible="true" table="testtable" column="name1" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" name="yeard">
+      <Hierarchy name="year" visible="true" hasAll="true">
+        <Level name="yearl" visible="true" table="testtable" column="year" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="salenum" column="testtablecol" aggregator="distinct-count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
